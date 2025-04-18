@@ -31,8 +31,6 @@ public class MaestroVariableServiceImpl implements MaestroVariableService {
                         .equals("H")).toList();
     }
 
-
-
     private List<MaestroVariableDto> obtenerCodigosMaestro(String codigoMaestro){
         return this.variableRepository.findByCodigoMaestroAndEstado(codigoMaestro, Constantes.ESTADO_ACTIVO)
                 .stream()

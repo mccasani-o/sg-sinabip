@@ -1,13 +1,18 @@
 package pe.gob.sbn.sinabip.modules.busquedaalfanumerica.model.response;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
+
+@Builder
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class GenericResponse {
-    private String codigo;
-    private String mensaje;
+@NoArgsConstructor
+public class BusquedaResponse {
+    private Integer total;
+    private List<BusquedaAlfanumericaResponse> data;
 }

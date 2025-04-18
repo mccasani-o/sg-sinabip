@@ -1,5 +1,6 @@
 package pe.gob.sbn.sinabip.modules.busquedaalfanumerica.persistence.dao.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
@@ -13,6 +14,7 @@ import javax.sql.DataSource;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @Repository
 public class BusquedaAlfanumericaDaoImpl implements BusquedaAlfanumericaDao {
 
@@ -43,10 +45,10 @@ public class BusquedaAlfanumericaDaoImpl implements BusquedaAlfanumericaDao {
                 .addValue("NRO_SI", request.getNumeroSolictudIngreso())
                 .addValue("OCURRENCIA", request.getOcurrencia())
                 .addValue("PAGE", request.getPagina())
-                .addValue("RECORDS", request.getNumeroGagina());
+                .addValue("RECORDS", request.getNumeroPagina());
 
         Map<String, Object> result = jdbcCall.execute(sqlParameter);
-        System.out.println("###############: "+ result);
+        log.info("Busqueda alfanumerica propieratio : {}", request.getCus());
         return (List<BusquedaAlfanumericaDto>) result.get("result");
     }
 }

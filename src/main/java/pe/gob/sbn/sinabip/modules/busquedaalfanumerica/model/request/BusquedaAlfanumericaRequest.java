@@ -1,5 +1,8 @@
 package pe.gob.sbn.sinabip.modules.busquedaalfanumerica.model.request;
 
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BusquedaAlfanumericaRequest {
 
+    @Size(max = 11,  message = "El RUC debe tener como máximo 11 caracteres")
     private String rucEntidad;
     private String cus;
     private String codigoDepartamento;
@@ -23,5 +27,5 @@ public class BusquedaAlfanumericaRequest {
     private String numeroSolictudIngreso;
     private String ocurrencia;
     private String pagina;
-    private String numeroGagina;
+    private String numeroPagina;
 }
