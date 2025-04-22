@@ -1,4 +1,4 @@
-package pe.gob.sbn.sinabip.modules.busquedaalfanumerica.persistence.dao.mapper;
+package pe.gob.sbn.sinabip.modules.busquedaalfanumerica.repository.rowmapper;
 
 import org.springframework.jdbc.core.RowMapper;
 import pe.gob.sbn.sinabip.modules.busquedaalfanumerica.model.dto.BusquedaAlfanumericaDto;
@@ -11,6 +11,7 @@ public class BusquedaAlfanumericaRowMapper implements RowMapper<BusquedaAlfanume
     @Override
     public BusquedaAlfanumericaDto mapRow(ResultSet rs, int rowNum) throws SQLException {
         BusquedaAlfanumericaDto response = new BusquedaAlfanumericaDto();
+        response.setTotal(rs.getInt("total"));
         response.setItem(rs.getString("ROW_NUMBER_ID"));
         response.setCodigoInterno(rs.getString("CODIGO_INTERNO"));
         response.setNumeroSinabip(rs.getString("NRO_RSINABIP"));

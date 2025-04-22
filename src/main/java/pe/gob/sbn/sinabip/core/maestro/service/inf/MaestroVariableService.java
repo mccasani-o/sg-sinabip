@@ -1,12 +1,13 @@
 package pe.gob.sbn.sinabip.core.maestro.service.inf;
 
+import pe.gob.sbn.sinabip.common.model.ApiResponse;
 import pe.gob.sbn.sinabip.core.maestro.dto.MaestroVariableDto;
 
 import java.util.List;
 
 public interface MaestroVariableService {
 
-    List<MaestroVariableDto> obtenerCodigoMaestro(String codigoMaestro);
+    ApiResponse obtenerCodigoMaestro(String codigoMaestro);
 
-    List<MaestroVariableDto> obtenerMaestroCalificacion(String codigoMaestro);
+    ApiResponse obtenerMaestroCalificacion(String codigoMaestro);
 }

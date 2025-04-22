@@ -1,11 +1,9 @@
 package pe.gob.sbn.sinabip.core.maestro.controller;
 
-import org.hibernate.query.QueryParameter;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
-import pe.gob.sbn.sinabip.core.maestro.dto.MaestroVariableDto;
+import pe.gob.sbn.sinabip.common.model.ApiResponse;
 import pe.gob.sbn.sinabip.core.maestro.service.inf.MaestroVariableService;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/maestros")
@@ -17,11 +15,11 @@ public class MaestroVariableController {
     }
 
     @GetMapping("/busqueda")
-    public List<MaestroVariableDto> obtenerCodigoMaestro(@RequestParam String codigoMaestro){
+    public ApiResponse obtenerCodigoMaestro(@Valid  @RequestParam String codigoMaestro){
         return this.maestroVariableService.obtenerCodigoMaestro(codigoMaestro);
     }
     @GetMapping("/busqueda/calificacion")
-    public List<MaestroVariableDto> obtenerMaestroCalificacion(@RequestParam String codigoMaestro){
+    public ApiResponse obtenerMaestroCalificacion(@RequestParam String codigoMaestro){
         return this.maestroVariableService.obtenerMaestroCalificacion(codigoMaestro);
     }
 }

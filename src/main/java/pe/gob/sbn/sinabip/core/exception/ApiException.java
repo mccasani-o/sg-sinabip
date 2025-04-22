@@ -1,4 +1,4 @@
-package pe.gob.sbn.sinabip.core.maestro.exception;
+package pe.gob.sbn.sinabip.core.exception;
 
 import lombok.Getter;
 import lombok.Setter;

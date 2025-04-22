@@ -14,5 +14,5 @@ import java.util.List;
 @NoArgsConstructor
 public class BusquedaResponse {
     private Integer total;
-    private List<BusquedaAlfanumericaResponse> data;
+    private List<BusquedaAlfanumericaResponse> lista;
 }

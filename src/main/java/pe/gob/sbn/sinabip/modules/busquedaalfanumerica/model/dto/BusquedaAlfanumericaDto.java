@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class BusquedaAlfanumericaDto {
 
 
+    private int total;
     private String item;
     private String codigoInterno;
     private String numeroSinabip;

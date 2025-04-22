@@ -10,6 +10,7 @@ public class MaestroVariableMapper {
 
     public static MaestroVariableDto mapToMaestroVariableDto(MaestroVariable maestroVariable) {
         MaestroVariableDto variableDto =  MaestroVariableDto.builder().build();
+
         BeanUtils.copyProperties(maestroVariable, variableDto);
         return variableDto;
     }

@@ -1,4 +1,4 @@
-package pe.gob.sbn.sinabip.modules.busquedaalfanumerica.persistence.dao.impl;
+package pe.gob.sbn.sinabip.modules.busquedaalfanumerica.repository.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -7,8 +7,8 @@ import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
 import pe.gob.sbn.sinabip.modules.busquedaalfanumerica.model.dto.BusquedaAlfanumericaDto;
 import pe.gob.sbn.sinabip.modules.busquedaalfanumerica.model.request.BusquedaAlfanumericaRequest;
-import pe.gob.sbn.sinabip.modules.busquedaalfanumerica.persistence.dao.inf.BusquedaAlfanumericaDao;
-import pe.gob.sbn.sinabip.modules.busquedaalfanumerica.persistence.dao.mapper.BusquedaAlfanumericaRowMapper;
+import pe.gob.sbn.sinabip.modules.busquedaalfanumerica.repository.inf.BusquedaAlfanumericaDao;
+import pe.gob.sbn.sinabip.modules.busquedaalfanumerica.repository.rowmapper.BusquedaAlfanumericaRowMapper;
 
 import javax.sql.DataSource;
 import java.util.List;
@@ -22,7 +22,7 @@ public class BusquedaAlfanumericaDaoImpl implements BusquedaAlfanumericaDao {
 
     public BusquedaAlfanumericaDaoImpl(DataSource dataSource) {
         this.jdbcCall = new SimpleJdbcCall(dataSource)
-                .withProcedureName("SP_SINABIP_BUSQUEDA_AVANZADA_PREDIOS")
+                .withProcedureName("SP_SINABIP_BUSQUEDA_AVANZADA_PREDIOS2")
                 .returningResultSet("result", new BusquedaAlfanumericaRowMapper());
     }
 

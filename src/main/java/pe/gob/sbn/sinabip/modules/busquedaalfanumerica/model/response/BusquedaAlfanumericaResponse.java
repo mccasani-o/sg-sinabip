@@ -1,5 +1,6 @@
 package pe.gob.sbn.sinabip.modules.busquedaalfanumerica.model.response;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BusquedaAlfanumericaResponse {
 
+    @JsonIgnore
+    private int total;
     private String item;
     private String codigoInterno;
     private String numeroSinabip;
